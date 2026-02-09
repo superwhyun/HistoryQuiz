@@ -26,10 +26,17 @@ initializeFonts();
 
 function getEraLabel(era: string): string {
   const labels: Record<string, string> = {
+    // 정식 코드
     prehistoric: '선사', gojoseon: '고조선', early_states: '원삼국',
     three_kingdoms: '삼국', unified_silla: '남북국', goryeo: '고려',
     joseon_early: '조선전기', joseon_late: '조선후기', enlightenment: '개화기',
-    japanese_colonial: '일제강점', modern: '현대',
+    japanese_colonial: '일제강점', modern: '현대', all: '전체',
+    // LLM이 생성할 수 있는 대체 코드들
+    joseon: '조선', japanese_occupation: '일제강점', japanese: '일제강점',
+    colonial: '일제강점', silla: '신라', baekje: '백제', goguryeo: '고구려',
+    balhae: '발해', gaya: '가야', buyeo: '부여', samhan: '삼한',
+    contemporary: '현대', present: '현대', liberation: '해방후',
+    korean_empire: '대한제국', daehan: '대한제국', opening: '개화기',
   };
   return labels[era] || era;
 }

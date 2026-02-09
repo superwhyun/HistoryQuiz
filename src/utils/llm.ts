@@ -33,6 +33,19 @@ function generatePrompt(config: QuizConfig): string {
 - 난이도: ${config.difficulty === 'mixed' ? '쉬움/중간/어려움 적절히 혼합' : config.difficulty}
 - 문제 수: ${config.count}개
 
+[유효한 era 값] (반드시 아래 값만 사용)
+- prehistoric (선사시대)
+- gojoseon (고조선)
+- early_states (원삼국)
+- three_kingdoms (삼국시대)
+- unified_silla (남북국시대)
+- goryeo (고려)
+- joseon_early (조선전기)
+- joseon_late (조선후기)
+- enlightenment (개화기)
+- japanese_colonial (일제강점기)
+- modern (현대)
+
 [응답 형식 - 반드시 JSON으로만 응답]
 {
   "questions": [
@@ -42,8 +55,8 @@ function generatePrompt(config: QuizConfig): string {
       "content": "문제 내용",
       "options": ["보기1", "보기2", "보기3", "보기4"],
       "answer": "정답",
-      "explanation": "상세 해설 (왜 정답인지, 관련 역사적 맥띁 설명)",
-      "era": "joseon",
+      "explanation": "상세 해설 (왜 정답인지, 관련 역사적 맥락 설명)",
+      "era": "joseon_early",
       "difficulty": "medium",
       "source": "출처(교과서명, 연도 등)"
     }

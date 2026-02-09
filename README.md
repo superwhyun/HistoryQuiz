@@ -26,32 +26,48 @@ AI를 활용하여 한국사 시험 문제를 생성하고 PDF로 다운로드�
 npx wrangler login
 ```
 
-2. 첫 배포(미리보기/브랜치 배포):
+2. 일반 배포:
 ```bash
 npm run cf:deploy
 ```
 
-3. 운영(main 브랜치) 배포:
+3. 운영(main 브랜치 강제) 배포:
 ```bash
 npm run cf:deploy:prod
 ```
 
 > `functions/` 디렉터리의 Pages Functions(`_middleware.ts`, `api/[[path]].ts`)도 함께 배포됩니다.
 
-## 개발
+## npm 사용법
 
 ```bash
 # 의존성 설치
 npm install
 
-# 개발 서버 실행
+# 로컬 개발 서버 실행 (Vite)
 npm run local
 
-# 프로덕션 빌드
+# 프로덕션 빌드만 수행
 npm run build
 
-# Cloudflare Pages 로컬 에뮬레이션 (Functions 포함)
+# Cloudflare Pages 로컬 시뮬레이션 (Functions 포함)
 npm run cf:simulate
+
+# Cloudflare Pages 배포
+npm run cf:deploy
+
+# Cloudflare Pages 운영(main) 배포
+npm run cf:deploy:prod
+```
+
+### 스크립트 요약
+
+```bash
+npm run local           # 로컬 개발
+npm run build           # 빌드
+npm run cf:simulate     # CF 로컬 시뮬레이션
+npm run cf:deploy       # CF 배포
+npm run cf:deploy:prod  # main 브랜치로 운영 배포
 ```
 
 ## 환경 변수
