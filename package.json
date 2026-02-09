@@ -1,0 +1,38 @@
+{
+  "name": "history-quiz",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "local": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "deploy": "npm run cf:deploy",
+    "cf:dev": "npm run cf:simulate",
+    "cf:simulate": "npm run build && wrangler pages dev dist --compatibility-date 2026-02-09",
+    "cf:deploy": "npm run build && wrangler pages deploy dist --project-name history-quiz",
+    "cf:deploy:prod": "npm run build && wrangler pages deploy dist --project-name history-quiz --branch main"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.24.3",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.2",
+    "lucide-react": "^0.395.0",
+    "openai": "^4.52.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.24",
+    "postcss": "^8.5.6",
+    "subset-font": "^2.4.0",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "wrangler": "^3.60.0"
+  }
+}
